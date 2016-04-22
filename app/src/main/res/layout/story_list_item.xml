@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="2dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/list_card">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.example.pardyot.roposo.RoundedImageView
+            android:id="@+id/story_image"
+            tools:src="@drawable/story"
+            android:contentDescription="story_image"
+            android:layout_margin="4dp"
+            android:layout_width="88dp"
+            android:layout_height="88dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/title"
+                tools:text="Title"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/description"
+                tools:text="Description"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_weight="2"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/like_image"
+                    android:src="@drawable/like"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp" />
+                <TextView
+                    android:id="@+id/like_count"
+                    tools:text="23"
+                    android:layout_toRightOf="@+id/like_image"
+                    android:textSize="8sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/comment_image"
+                    android:src="@drawable/comment"
+                    android:layout_toRightOf="@+id/like_count"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp" />
+                <TextView
+                    android:id="@+id/comment_count"
+                    tools:text="34"
+                    android:textSize="8sp"
+                    android:layout_toRightOf="@+id/comment_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

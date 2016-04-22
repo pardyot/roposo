@@ -1,8 +1,11 @@
 package com.example.pardyot.roposo;
 
+import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -40,6 +43,24 @@ public class MainActivity extends AppCompatActivity {
         }
         storyAdapter = new StoryAdapter(storyList , this);
         storyListView.setAdapter(storyAdapter);
+        storyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                StoryBean story = storyList.get(position);
+                String authorId = story.getAuthor();
+                UserBean user = new UserBean();
+                if(authorId.equals(userList.get(0).getId())) {
+                    user = userList.get(0);
+                } else {
+                    user = userList.get(1);
+                }
+                Intent openStoryDescription = new Intent(MainActivity.this, StoryDescription.class);
+                openStoryDescription.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                openStoryDescription.putExtra("story", story);
+                openStoryDescription.putExtra("user" , user);
+                startActivity(openStoryDescription);
+            }
+        });
 
     }
 
@@ -108,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         user.setUrl(jsonObject.getString("url"));
         user.setHandle(jsonObject.getString("handle"));
         user.setIsFollowing(jsonObject.getBoolean("is_following"));
-        user.setCreatedOn(new Timestamp(jsonObject.getLong("createdOn")));
+        user.setCreatedOn(jsonObject.getLong("createdOn"));
         userList.add(user);
 
 
@@ -122,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         user.setUrl(jsonObject.getString("url"));
         user.setHandle(jsonObject.getString("handle"));
         user.setIsFollowing(jsonObject.getBoolean("is_following"));
-        user.setCreatedOn(new Timestamp(jsonObject.getLong("createdOn")));
+        user.setCreatedOn(jsonObject.getLong("createdOn"));
         userList.add(user);
         return userList;
     }
