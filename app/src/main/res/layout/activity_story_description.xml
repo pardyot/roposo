@@ -25,6 +25,9 @@
                 android:id="@+id/title"
                 android:textSize="22sp"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
                 android:layout_width="match_parent"
                 android:textColor="#fff"
                 android:layout_height="wrap_content" />

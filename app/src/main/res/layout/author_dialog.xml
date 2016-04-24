@@ -30,6 +30,7 @@
             android:id="@+id/handle"
             android:layout_weight="1"
             tools:text="abcdefg"
+            android:textColor="#5c85d6"
             android:textAlignment="textEnd"
             android:layout_gravity="end"
             android:layout_marginRight="4dp"
