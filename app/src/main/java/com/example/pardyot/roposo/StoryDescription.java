@@ -40,6 +40,9 @@ public class StoryDescription extends AppCompatActivity {
 //    TextView handle;
 //    TextView createdOn;
     TextView followInfo;
+    ImageView like;
+    ImageView notLike;
+
 
     SharedPreferences mPref;
     boolean isfollowed;
@@ -66,7 +69,8 @@ public class StoryDescription extends AppCompatActivity {
 //        handle = (TextView) findViewById(R.id.handle);
 //        createdOn = (TextView) findViewById(R.id.createdOn);
         followInfo = (TextView) findViewById(R.id.follow_info);
-
+        like = (ImageView) findViewById(R.id.like);
+        notLike = (ImageView) findViewById(R.id.not_like);
 
 
         Intent in = getIntent();
@@ -105,6 +109,27 @@ public class StoryDescription extends AppCompatActivity {
         likeAndComment.setTypeface(robotoLight);
         follow.setTypeface(robotoLight);
         website.setTypeface(robotoLight);
+        if(story.isLikeFlag()) {
+            like.setVisibility(View.VISIBLE);
+            notLike.setVisibility(View.GONE);
+        } else {
+            like.setVisibility(View.GONE);
+            notLike.setVisibility(View.VISIBLE);
+        }
+        like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                notLike.setVisibility(View.VISIBLE);
+                like.setVisibility(View.GONE);
+            }
+        });
+        notLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                like.setVisibility(View.VISIBLE);
+                notLike.setVisibility(View.GONE);
+            }
+        });
 //        likesCount.setText(String.valueOf(story.getLikesCount()));
 //        commentCount.setText(String.valueOf(story.getCommentCount()));
 

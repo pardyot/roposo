@@ -69,6 +69,26 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/like"
+                android:visibility="gone"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/like1"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+            <ImageView
+                android:id="@+id/not_like"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/not_like"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+
         </RelativeLayout>
 
         <RelativeLayout
