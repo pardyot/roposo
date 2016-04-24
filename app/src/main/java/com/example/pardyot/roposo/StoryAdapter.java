@@ -50,19 +50,23 @@ public class StoryAdapter extends BaseAdapter{
         } else{
             row = convertView;
         }
-        Typeface robotoBold = Typeface.createFromAsset(context.getAssets(), "RobotoTTF/Roboto-Bold.ttf");
-
+        Typeface robotoRegular = Typeface.createFromAsset(context.getAssets(), "RobotoTTF/Roboto-Regular.ttf");
+        Typeface robotoLight = Typeface.createFromAsset(context.getAssets(), "RobotoTTF/Roboto-Light.ttf");
+        Typeface robotoThin = Typeface.createFromAsset(context.getAssets(), "RobotoTTF/Roboto-Thin.ttf");
         ImageView storyImage = (ImageView) row.findViewById(R.id.story_image);
         TextView title = (TextView) row.findViewById(R.id.title);
-        title.setTypeface(robotoBold);
+        title.setTypeface(robotoRegular);
         TextView description = (TextView) row.findViewById(R.id.description);
+        description.setTypeface(robotoLight);
         TextView likesCount = (TextView) row.findViewById(R.id.like_count);
         TextView commentCount = (TextView) row.findViewById(R.id.comment_count);
         Picasso.with(context).load(storyList.get(position).getStoryImage()).resize(dpToPx(88), dpToPx(88)).centerCrop().into(storyImage);
         title.setText(storyList.get(position).getTitle());
         description.setText(storyList.get(position).getDescription());
         likesCount.setText(String.valueOf(storyList.get(position).getLikesCount()));
+        likesCount.setTypeface(robotoThin);
         commentCount.setText(String.valueOf(storyList.get(position).getCommentCount()));
+        commentCount.setTypeface(robotoThin);
         return row;
     }
 

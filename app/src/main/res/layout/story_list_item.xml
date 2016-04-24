@@ -23,6 +23,9 @@
             <TextView
                 android:id="@+id/title"
                 tools:text="Title"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="18sp"
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"

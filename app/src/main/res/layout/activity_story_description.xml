@@ -14,7 +14,7 @@
             <ImageView
                 android:id="@+id/story_image"
                 android:layout_width="match_parent"
-                android:layout_height="320dp" />
+                android:layout_height="380dp" />
             <View
                 android:layout_alignParentTop="true"
                 android:layout_width="match_parent"
@@ -23,10 +23,11 @@
             <TextView
                 tools:text="Title"
                 android:id="@+id/title"
+                android:textSize="22sp"
                 android:layout_centerHorizontal="true"
                 android:layout_width="match_parent"
                 android:textColor="#fff"
-                android:layout_height="48dp" />
+                android:layout_height="wrap_content" />
             <View
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/gradient_above"
@@ -37,11 +38,15 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_width="48dp"
-                android:layout_height="48dp" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp" />
             <LinearLayout
                 android:layout_toRightOf="@+id/author_image"
                 android:layout_alignParentBottom="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -56,6 +61,7 @@
                     android:id="@+id/follow_info"
                     tools:text="followers and following"
                     android:textColor="#fff"
+                    android:layout_marginBottom="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -68,17 +74,32 @@
             <Button
                 android:id="@+id/follow"
                 android:text="Follow"
-                android:textColor="#fff"
+                android:textColor="#4d4d33"
+                android:textSize="10sp"
+                android:layout_marginRight="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="4dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_width="84dp"
-                android:layout_height="48dp" />
+                android:layout_height="32dp" />
             <TextView
                 android:id="@+id/verb"
                 tools:text="created On "
+                android:layout_below="@+id/like_and_comment"
                 android:layout_toLeftOf="@+id/follow"
+                android:layout_marginLeft="4dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/like_and_comment"
+                tools:text="likes"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="4dp"
+                android:textSize="10sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
@@ -86,6 +107,9 @@
         <TextView
             android:id="@+id/description"
             tools:text="description"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <RelativeLayout
@@ -94,6 +118,10 @@
             <TextView
                 android:id="@+id/type"
                 android:text="Type : "
+                android:layout_toLeftOf="@+id/website"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
@@ -101,9 +129,11 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:text="Website"
-                android:textColor="#fff"
+                android:background="@null"
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent"
                 android:layout_width="84dp"
-                android:layout_height="48dp" />
+                android:layout_height="32dp" />
         </RelativeLayout>
 
         <!--<TextView-->
