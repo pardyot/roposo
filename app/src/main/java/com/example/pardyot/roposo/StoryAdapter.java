@@ -1,6 +1,7 @@
 package com.example.pardyot.roposo;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,9 +50,11 @@ public class StoryAdapter extends BaseAdapter{
         } else{
             row = convertView;
         }
+        Typeface robotoBold = Typeface.createFromAsset(context.getAssets(), "RobotoTTF/Roboto-Bold.ttf");
 
         ImageView storyImage = (ImageView) row.findViewById(R.id.story_image);
         TextView title = (TextView) row.findViewById(R.id.title);
+        title.setTypeface(robotoBold);
         TextView description = (TextView) row.findViewById(R.id.description);
         TextView likesCount = (TextView) row.findViewById(R.id.like_count);
         TextView commentCount = (TextView) row.findViewById(R.id.comment_count);

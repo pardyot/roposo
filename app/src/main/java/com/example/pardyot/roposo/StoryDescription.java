@@ -28,12 +28,12 @@ public class StoryDescription extends AppCompatActivity {
     TextView description;
     TextView type;
     Button website;
-    TextView likesCount;
-    TextView commentCount;
+//    TextView likesCount;
+//    TextView commentCount;
     ImageView authorImage;
-    TextView username;
-    TextView handle;
-    TextView createdOn;
+//    TextView username;
+//    TextView handle;
+//    TextView createdOn;
     TextView followInfo;
 
     @Override
@@ -48,12 +48,12 @@ public class StoryDescription extends AppCompatActivity {
         description = (TextView) findViewById(R.id.description);
         type = (TextView) findViewById(R.id.type);
         website = (Button) findViewById(R.id.website);
-        likesCount = (TextView) findViewById(R.id.like_count);
-        commentCount = (TextView) findViewById(R.id.comment_count);
+//        likesCount = (TextView) findViewById(R.id.like_count);
+//        commentCount = (TextView) findViewById(R.id.comment_count);
         authorImage = (ImageView) findViewById(R.id.author_image);
-        username = (TextView) findViewById(R.id.username);
-        handle = (TextView) findViewById(R.id.handle);
-        createdOn = (TextView) findViewById(R.id.createdOn);
+//        username = (TextView) findViewById(R.id.username);
+//        handle = (TextView) findViewById(R.id.handle);
+//        createdOn = (TextView) findViewById(R.id.createdOn);
         followInfo = (TextView) findViewById(R.id.follow_info);
 
         Intent in = getIntent();
@@ -61,14 +61,14 @@ public class StoryDescription extends AppCompatActivity {
         final UserBean user = (UserBean) in.getSerializableExtra("user");
 
 
-        Picasso.with(this).load(story.getStoryImage()).into(storyImage);
+        Picasso.with(this).load(story.getStoryImage()).fit().into(storyImage);
         title.setText(story.getTitle());
-        author.setText(user.getUsername());
+        author.setText("by- " + user.getUsername());
         verb.setText(story.getVerb());
         description.setText(story.getDescription());
         type.setText(story.getType());
-        likesCount.setText(String.valueOf(story.getLikesCount()));
-        commentCount.setText(String.valueOf(story.getCommentCount()));
+//        likesCount.setText(String.valueOf(story.getLikesCount()));
+//        commentCount.setText(String.valueOf(story.getCommentCount()));
 
         website.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,20 +80,20 @@ public class StoryDescription extends AppCompatActivity {
         });
 
         Picasso.with(this).load(user.getImageUrl()).into(authorImage);
-        username.setText(user.getUsername());
-        handle.setText(user.getHandle());
+//        username.setText(user.getUsername());
+//        handle.setText(user.getHandle());
         String followers = String.valueOf(user.getFollowers());
         String following = String.valueOf(user.getFollowing());
         followInfo.setText("Followers:" + followers + ", Following: " + following);
-        handle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse(user.getUrl());
-                Intent openAuthor = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(openAuthor);
-            }
-        });
-        createdOn.setText(getDateCurrentTimeZone(user.getCreatedOn()));
+//        handle.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Uri uri = Uri.parse(user.getUrl());
+//                Intent openAuthor = new Intent(Intent.ACTION_VIEW, uri);
+//                startActivity(openAuthor);
+//            }
+//        });
+//        createdOn.setText(getDateCurrentTimeZone(user.getCreatedOn()));
 
     }
 

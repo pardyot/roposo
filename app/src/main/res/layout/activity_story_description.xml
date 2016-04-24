@@ -18,7 +18,7 @@
             <View
                 android:layout_alignParentTop="true"
                 android:layout_width="match_parent"
-                android:background="#65000000"
+                android:background="@drawable/gradient_below"
                 android:layout_height="48dp"/>
             <TextView
                 tools:text="Title"
@@ -29,51 +29,37 @@
                 android:layout_height="48dp" />
             <View
                 android:layout_alignParentBottom="true"
-                android:background="#65000000"
+                android:background="@drawable/gradient_above"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"/>
-            <TextView
-                android:id="@+id/author"
-                android:layout_alignParentBottom="true"
-                android:textColor="#fff"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                tools:text="author"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:id="@+id/like_image"
+            <com.example.pardyot.roposo.RoundedImageView
+                android:id="@+id/author_image"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:src="@drawable/like"
-                android:layout_width="16dp"
-                android:layout_height="16dp" />
-            <TextView
-                android:id="@+id/like_count"
-                android:layout_toRightOf="@+id/like_image"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+            <LinearLayout
+                android:layout_toRightOf="@+id/author_image"
                 android:layout_alignParentBottom="true"
-                android:textSize="8sp"
-                android:textColor="#fff"
-                tools:text="34"
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:id="@+id/comment_image"
-                android:src="@drawable/comment"
-                android:layout_toRightOf="@+id/like_count"
-                android:layout_alignParentBottom="true"
-                android:layout_width="16dp"
-                android:layout_height="16dp" />
-            <TextView
-                android:id="@+id/comment_count"
-                android:layout_toRightOf="@+id/comment_image"
-                tools:text="56"
-                android:textColor="#fff"
-                android:layout_alignParentBottom="true"
-                android:textSize="8sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/author"
+                    android:textColor="#fff"
+                    tools:text="author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/follow_info"
+                    tools:text="followers and following"
+                    android:textColor="#fff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -120,52 +106,52 @@
                 android:layout_height="48dp" />
         </RelativeLayout>
 
-        <TextView
-            android:textAlignment="center"
-            android:text="About the Author"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <!--<TextView-->
+            <!--android:textAlignment="center"-->
+            <!--android:text="About the Author"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-        <ImageView
-            android:id="@+id/author_image"
-            android:layout_gravity="center"
-            android:layout_width="120dp"
-            android:layout_height="120dp" />
+        <!--<com.example.pardyot.roposo.RoundedImageView-->
+            <!--android:id="@+id/author_image"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_width="120dp"-->
+            <!--android:layout_height="120dp" />-->
 
-        <TextView
-            android:id="@+id/username"
-            android:textAlignment="center"
-            tools:text="nargis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <!--<TextView-->
+            <!--android:id="@+id/username"-->
+            <!--android:textAlignment="center"-->
+            <!--tools:text="nargis"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/handle"
-                tools:text="abcdefgh"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<TextView-->
+                <!--android:id="@+id/handle"-->
+                <!--tools:text="abcdefgh"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
 
-            <TextView
-                android:id="@+id/createdOn"
-                tools:text="testing"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_toRightOf="@+id/handle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
+            <!--<TextView-->
+                <!--android:id="@+id/createdOn"-->
+                <!--tools:text="testing"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_toRightOf="@+id/handle"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+        <!--</RelativeLayout>-->
 
-        <TextView
-            android:id="@+id/follow_info"
-            tools:text="followers and following"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <!--<TextView-->
+            <!--android:id="@+id/follow_info"-->
+            <!--tools:text="followers and following"-->
+            <!--android:textAlignment="center"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
     </LinearLayout>
 
